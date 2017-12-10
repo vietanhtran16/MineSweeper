@@ -9,19 +9,39 @@ namespace MineSweeperKata
         public Field Process(string fields)
         {
             var field = new Field();
-            var rowAndColumn = new List<int>();
-            foreach (var c in fields)
-            {
-                int parsedChar;
-                var result = int.TryParse(c.ToString(), out parsedChar);
-                if(result)
-                    rowAndColumn.Add(parsedChar);
-            }
+            var rowAndColumn = GetRowAndColumn(fields);
+            var processedFieldValue = CleanseField(fields);
+            processedFieldValue = RemoveRowAndColumn(processedFieldValue, rowAndColumn);
 
             field.NoOfRows = rowAndColumn.First();
             field.NoOfColumns = rowAndColumn.Last();
-            field.Value = fields;
+            field.Value = processedFieldValue;
             return field;
+        }
+
+        private static string CleanseField(string fields)
+        {
+            return fields.Replace("~", "").Replace("\n", "").Replace(" ", "");
+        }
+
+        private string RemoveRowAndColumn(string processedFieldValue, IEnumerable<int> rowAndColumn)
+        {
+            foreach (var i in rowAndColumn)
+                processedFieldValue = processedFieldValue.Replace(i.ToString(), "");
+
+            return processedFieldValue;
+        }
+
+        private List<int> GetRowAndColumn(string fields)
+        {
+            var rowAndColumn = new List<int>();
+            foreach (var c in fields)
+            {
+                if (int.TryParse(c.ToString(), out var parsedChar))
+                    rowAndColumn.Add(parsedChar);
+            }
+
+            return rowAndColumn;
         }
     }
 }

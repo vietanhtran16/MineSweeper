@@ -22,12 +22,10 @@ namespace MineSweeperKata.Test
             {
                 NoOfRows = 4,
                 NoOfColumns = 4,
-                Value = "~~~\n" +
-                         "*... \n" +
-                         ".... \n" +
-                         ".*.. \n" +
-                         "....\n" +
-                         "~~~"
+                Value = "*..." +
+                        "...." +
+                        ".*.." +
+                        "...."
         };
             Assert.AreEqual(expected.NoOfRows, actual.NoOfRows);
             Assert.AreEqual(expected.NoOfColumns, actual.NoOfColumns);
