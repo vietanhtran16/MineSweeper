@@ -2,7 +2,7 @@ namespace MineSweeperKata
 {
     public class MineSweeper
     {
-        public string DoSomething(string fields)
+        public string Sweep(string fields)
         {
             throw new System.NotImplementedException();
         }

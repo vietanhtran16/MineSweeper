@@ -16,26 +16,14 @@ namespace MineSweeperKata.Test
                                   ".... \n" +
                                   ".*.. \n" +
                                   "....\n" +
-                                  "~~~\n\n" +
-                                  "~~~\n" +
-                                  "35 \n" +
-                                  "**... \n" +
-                                  "..... \n" +
-                                  ".*...\n" +
                                   "~~~";
-            var actual = mineSweeper.DoSomething(fields);
+            var actual = mineSweeper.Sweep(fields);
             const string expected = "~~~\n" +
                                     "Field #1: \n" +
                                     "*100 \n" +
                                     "2210 \n" +
                                     "1*10 \n" +
                                     "1110\n" +
-                                    "~~~\n\n" +
-                                    "~~~\n" +
-                                    "Field #2: \n" +
-                                    "**100 \n" +
-                                    "33200 \n" +
-                                    "1*100\n" +
                                     "~~~";
             Assert.AreEqual(expected, actual);
         }
