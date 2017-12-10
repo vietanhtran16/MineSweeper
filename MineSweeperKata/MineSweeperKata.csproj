@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test\AcceptanceTest.cs" />
+    <Compile Include="Test\MineSweeperShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\MineSweeper.cs" />
   </ItemGroup>

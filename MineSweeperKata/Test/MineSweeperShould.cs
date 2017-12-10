@@ -3,10 +3,10 @@
 namespace MineSweeperKata.Test
 {
     [TestFixture]
-    public class AcceptanceTest
+    public class MineSweeperShould
     {
         [Test]
-        public void Foo()
+        public void ReturnAnalysedFields()
         {
             var mineSweeper = new MineSweeper();
             const string fields = "~~~\n" +
