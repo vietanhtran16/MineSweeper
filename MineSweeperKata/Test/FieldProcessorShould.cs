@@ -9,15 +9,15 @@ namespace MineSweeperKata.Test
         [Test]
         public void ReturnFieldInfo()
         {
-            var fieldProcessor = new FieldProcessor();
+            var fieldProcessor = new FieldConverter();
             var fields = "~~~\n" +
                          "44 \n" +
-                         "*... \n" +
-                         ".... \n" +
-                         ".*.. \n" +
+                         "*...\n" +
+                         "....\n" +
+                         ".*..\n" +
                          "....\n" +
                          "~~~";
-            var actual = fieldProcessor.Process(fields);
+            var actual = fieldProcessor.ConvertFrom(fields);
             var expected = new Field()
             {
                 NoOfRows = 4,
@@ -26,7 +26,7 @@ namespace MineSweeperKata.Test
                         "...." +
                         ".*.." +
                         "...."
-        };
+            };
             Assert.AreEqual(expected.NoOfRows, actual.NoOfRows);
             Assert.AreEqual(expected.NoOfColumns, actual.NoOfColumns);
             Assert.AreEqual(expected.Value, actual.Value);

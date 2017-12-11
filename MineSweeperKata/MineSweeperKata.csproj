@@ -46,12 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Square.cs" />
+    <Compile Include="src\SquareConverter.cs" />
+    <Compile Include="src\MineAnalyser.cs" />
+    <Compile Include="Test\MineAnalyserShould.cs" />
     <Compile Include="Test\FieldProcessorShould.cs" />
     <Compile Include="DTO\Field.cs" />
-    <Compile Include="src\FieldProcessor.cs" />
+    <Compile Include="src\FieldConverter.cs" />
     <Compile Include="Test\MineSweeperShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\MineSweeper.cs" />
+    <Compile Include="Test\SquareConverterShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

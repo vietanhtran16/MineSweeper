@@ -4,9 +4,9 @@ using MineSweeperKata.DTO;
 
 namespace MineSweeperKata
 {
-    public class FieldProcessor
+    public class FieldConverter
     {
-        public Field Process(string fields)
+        public Field ConvertFrom(string fields)
         {
             var field = new Field();
             var rowAndColumn = GetRowAndColumn(fields);
@@ -17,6 +17,18 @@ namespace MineSweeperKata
             field.NoOfColumns = rowAndColumn.Last();
             field.Value = processedFieldValue;
             return field;
+        }
+
+        private List<int> GetRowAndColumn(string fields)
+        {
+            var rowAndColumn = new List<int>();
+            foreach (var c in fields)
+            {
+                if (int.TryParse(c.ToString(), out var parsedChar))
+                    rowAndColumn.Add(parsedChar);
+            }
+
+            return rowAndColumn;
         }
 
         private static string CleanseField(string fields)
@@ -30,18 +42,6 @@ namespace MineSweeperKata
                 processedFieldValue = processedFieldValue.Replace(i.ToString(), "");
 
             return processedFieldValue;
-        }
-
-        private List<int> GetRowAndColumn(string fields)
-        {
-            var rowAndColumn = new List<int>();
-            foreach (var c in fields)
-            {
-                if (int.TryParse(c.ToString(), out var parsedChar))
-                    rowAndColumn.Add(parsedChar);
-            }
-
-            return rowAndColumn;
         }
     }
 }
