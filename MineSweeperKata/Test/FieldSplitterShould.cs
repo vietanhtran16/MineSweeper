@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using MineSweeperKata.DTO;
 using NUnit.Framework;
 
 namespace MineSweeperKata.Test

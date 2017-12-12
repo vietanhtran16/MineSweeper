@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -15,14 +14,20 @@ namespace MineSweeperKata
             _fieldConverter = new FieldConverter();
         }
 
-        public IEnumerable<string> Split(string field)
+        public IEnumerable<Field> TransformRawFields(string fields)
+        {
+            var splitFields = Split(fields);
+            return ConvertMultipleFields(splitFields);
+        }
+
+        public IEnumerable<string> Split(string fields)
         {
             const string pattern = @"\~~~(.*?)\~~~";
-            var test = Regex.Matches(field, pattern, RegexOptions.Singleline).Cast<Match>();
+            var test = Regex.Matches(fields, pattern, RegexOptions.Singleline).Cast<Match>();
             return test.Select(m => m.Value);
         }
 
-        public IEnumerable<Field> ConvertToFields(IEnumerable<string> splitFields)
+        public IEnumerable<Field> ConvertMultipleFields(IEnumerable<string> splitFields)
         {
             return splitFields.Select(field => _fieldConverter.ConvertFrom(field)).ToList();
         }

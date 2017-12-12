@@ -4,12 +4,12 @@ using NUnit.Framework;
 namespace MineSweeperKata.Test
 {
     [TestFixture]
-    public class FieldProcessorShould
+    public class FieldConverterShould
     {
         [Test]
         public void ReturnFieldInfo()
         {
-            var fieldProcessor = new FieldConverter();
+            var fieldConverter = new FieldConverter();
             var fields = "~~~\n" +
                          "44\n" +
                          "*...\n" +
@@ -17,7 +17,7 @@ namespace MineSweeperKata.Test
                          ".*..\n" +
                          "....\n" +
                          "~~~\n";
-            var actual = fieldProcessor.ConvertFrom(fields);
+            var actual = fieldConverter.ConvertFrom(fields);
             var expected = new Field()
             {
                 NoOfRows = 4,

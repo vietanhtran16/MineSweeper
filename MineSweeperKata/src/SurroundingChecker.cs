@@ -5,9 +5,11 @@ namespace MineSweeperKata
 {
     public class SurroundingChecker
     {
+        private readonly CoordinateConverter _coordinateConverter;
         private readonly char _bombSymbol;
         public SurroundingChecker()
         {
+            _coordinateConverter = new CoordinateConverter();
             _bombSymbol = '*';
         }
         public string CheckBomb(Square square, Field field)
@@ -25,19 +27,11 @@ namespace MineSweeperKata
                 for (var y = minY; y <= maxY; y++)
                 {
                     if(x == square.XCoordinate && y == square.YCoordinate) continue;
-                    if (field.Value[ConvertCoordToIndex(x, y, field.NoOfColumns)] == _bombSymbol)
+                    if (field.Value[_coordinateConverter.ConvertCoordToIndex(x, y, field.NoOfColumns)] == _bombSymbol)
                         bombCount++;
                 }
             }
             return bombCount.ToString();
-        }
-
-        private int ConvertCoordToIndex(int xCoord, int yCoord, int noOfColumns)
-        {
-            const int startingIndexOfArray = 0;
-            var startingIndexOfSpecifiedRow = startingIndexOfArray + (noOfColumns * (xCoord - 1));
-            var positionWithinSpecifiedRow = yCoord - 1;
-            return startingIndexOfSpecifiedRow + positionWithinSpecifiedRow;
         }
     }
 }

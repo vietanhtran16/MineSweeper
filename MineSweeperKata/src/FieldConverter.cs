@@ -31,7 +31,7 @@ namespace MineSweeperKata
             return rowAndColumn;
         }
 
-        private static string CleanseField(string fields)
+        private string CleanseField(string fields)
         {
             return fields.Replace("~", "").Replace("\n", "").Replace(" ", "");
         }

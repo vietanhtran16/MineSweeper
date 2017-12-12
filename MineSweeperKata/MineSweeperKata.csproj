@@ -48,12 +48,14 @@
   <ItemGroup>
     <Compile Include="DTO\Square.cs" />
     <Compile Include="Interface\ISquareConverter.cs" />
+    <Compile Include="src\CoordinateConverter.cs" />
+    <Compile Include="src\FieldFormatter.cs" />
     <Compile Include="src\SquareConverter.cs" />
     <Compile Include="src\MineAnalyser.cs" />
     <Compile Include="src\FieldSplitter.cs" />
     <Compile Include="Test\FieldSplitterShould.cs" />
     <Compile Include="Test\MineAnalyserShould.cs" />
-    <Compile Include="Test\FieldProcessorShould.cs" />
+    <Compile Include="Test\FieldConverterShould.cs" />
     <Compile Include="DTO\Field.cs" />
     <Compile Include="src\FieldConverter.cs" />
     <Compile Include="Test\MineSweeperShould.cs" />
