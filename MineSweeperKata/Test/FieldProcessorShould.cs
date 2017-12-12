@@ -11,12 +11,12 @@ namespace MineSweeperKata.Test
         {
             var fieldProcessor = new FieldConverter();
             var fields = "~~~\n" +
-                         "44 \n" +
+                         "44\n" +
                          "*...\n" +
                          "....\n" +
                          ".*..\n" +
                          "....\n" +
-                         "~~~";
+                         "~~~\n";
             var actual = fieldProcessor.ConvertFrom(fields);
             var expected = new Field()
             {
