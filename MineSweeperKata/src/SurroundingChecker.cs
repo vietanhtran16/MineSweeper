@@ -10,7 +10,7 @@ namespace MineSweeperKata
         {
             _bombSymbol = '*';
         }
-        public string Check(Square square, Field field)
+        public string CheckBomb(Square square, Field field)
         {
             if (square.IsBomb) return _bombSymbol.ToString();
 

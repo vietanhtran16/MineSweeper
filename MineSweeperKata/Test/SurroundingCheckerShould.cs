@@ -26,7 +26,7 @@ namespace MineSweeperKata.Test
                 IsBomb = false,
             };
 
-            var actual = surroundingChecker.Check(square, field);
+            var actual = surroundingChecker.CheckBomb(square, field);
             var expected = "2";
             Assert.AreEqual(expected, actual);
         }
@@ -51,7 +51,7 @@ namespace MineSweeperKata.Test
                 IsBomb = true,
             };
 
-            var actual = surroundingChecker.Check(square, field);
+            var actual = surroundingChecker.CheckBomb(square, field);
             var expected = "*";
             Assert.AreEqual(expected, actual);
         }
@@ -76,7 +76,7 @@ namespace MineSweeperKata.Test
                 IsBomb = false,
             };
 
-            var actual = surroundingChecker.Check(square, field);
+            var actual = surroundingChecker.CheckBomb(square, field);
             var expected = "0";
             Assert.AreEqual(expected, actual);
         }
