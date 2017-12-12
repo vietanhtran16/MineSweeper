@@ -16,9 +16,9 @@ namespace MineSweeperKata
 
             var bombCount = 0;
             var minX = Math.Max(1, square.XCoordinate - 1);
-            var maxX = Math.Min(field.NoOfColumns - 1, square.XCoordinate + 1);
+            var maxX = Math.Min(field.NoOfRows, square.XCoordinate + 1);
             var minY = Math.Max(1, square.YCoordinate - 1);
-            var maxY = Math.Min(field.NoOfRows - 1, square.YCoordinate + 1);
+            var maxY = Math.Min(field.NoOfColumns, square.YCoordinate + 1);
 
             for (var x = minX; x <= maxX; x++)
             {
