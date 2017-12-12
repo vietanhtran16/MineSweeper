@@ -1,5 +1,5 @@
-﻿using System;
-using MineSweeperKata.DTO;
+﻿using MineSweeperKata.DTO;
+using MineSweeperKata.Interface;
 
 namespace MineSweeperKata
 {
@@ -14,13 +14,17 @@ namespace MineSweeperKata
             _surroundingChecker = new SurroundingChecker();
         }
 
-        public string ReadMine(Field field)
+        public string Read(Field field)
         {
             var analysedField = string.Empty;
             for (var index = 0; index < field.Value.Length; index++)
             {
                 var square = _squareConverter.ConvertToSquareBasedOnIndex(index, field);
                 analysedField += _surroundingChecker.Check(square, field);
+                if (square.YCoordinate == field.NoOfColumns)
+                {
+                    analysedField += "\n";
+                }
             }
             return analysedField;
         }

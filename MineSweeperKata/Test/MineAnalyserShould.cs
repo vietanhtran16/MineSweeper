@@ -19,11 +19,11 @@ namespace MineSweeperKata.Test
                         "..*." +
                         "...."
             };
-            var actual = mineAnalyser.ReadMine(field);
-            const string expected = "1110" +
-                                    "1*21" +
-                                    "12*1" +
-                                    "0111";
+            var actual = mineAnalyser.Read(field);
+            const string expected = "1110\n" +
+                                    "1*21\n" +
+                                    "12*1\n" +
+                                    "0111\n";
             Assert.AreEqual(expected, actual);
         }
 
@@ -39,10 +39,10 @@ namespace MineSweeperKata.Test
                         "....." +
                         ".*..."
             };
-            var actual = mineAnalyser.ReadMine(field);
-            const string expected = "**100" +
-                                    "33200" +
-                                    "1*100";
+            var actual = mineAnalyser.Read(field);
+            const string expected = "**100\n" +
+                                    "33200\n" +
+                                    "1*100\n";
             Assert.AreEqual(expected, actual);
         }
     }

@@ -1,6 +1,6 @@
 ﻿using MineSweeperKata.DTO;
 
-namespace MineSweeperKata
+namespace MineSweeperKata.Interface
 {
     public interface ISquareConverter
     {

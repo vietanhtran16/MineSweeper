@@ -14,7 +14,7 @@ namespace MineSweeperKata
         public string Sweep(string fields)
         {
             var processedField = _fieldConverter.ConvertFrom(fields);
-            var fieldWithMineInfo = _mineAnalyser.ReadMine(processedField);
+            var fieldWithMineInfo = _mineAnalyser.Read(processedField);
             return "~~~\n" +
                    "Field #1: \n" +
                    fieldWithMineInfo +

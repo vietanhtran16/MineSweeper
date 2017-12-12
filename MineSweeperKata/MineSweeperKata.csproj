@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\Square.cs" />
-    <Compile Include="src\ISquareConverter.cs" />
+    <Compile Include="Interface\ISquareConverter.cs" />
     <Compile Include="src\SquareConverter.cs" />
     <Compile Include="src\MineAnalyser.cs" />
     <Compile Include="Test\MineAnalyserShould.cs" />
