@@ -20,7 +20,7 @@ namespace MineSweeperKata
             for (var index = 0; index < field.Value.Length; index++)
             {
                 var square = _squareConverter.ConvertToSquareBasedOnIndex(index, field);
-                analysedField += _surroundingChecker.Check(square, field);
+                analysedField += _surroundingChecker.CheckBomb(square, field);
                 if (square.YCoordinate == field.NoOfColumns)
                 {
                     analysedField += "\n";
