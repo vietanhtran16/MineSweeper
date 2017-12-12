@@ -14,16 +14,16 @@ namespace MineSweeperKata.Test
             {
                 NoOfRows = 4,
                 NoOfColumns = 4,
-                Value = "*..." +
-                        "...." +
+                Value = "...." +
                         ".*.." +
+                        "..*." +
                         "...."
             };
             var actual = blah.ReadMine(field);
-            var expected = "*100\n" +
-                           "2210\n" +
-                           "1*10\n" +
-                           "1110\n";
+            const string expected = "1110" +
+                                    "1*21" +
+                                    "12*1" +
+                                    "0111";
             Assert.AreEqual(expected, actual);
         }
     }

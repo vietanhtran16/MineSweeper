@@ -58,5 +58,31 @@ namespace MineSweeperKata.Test
             Assert.AreEqual(expected.YCoordinate, actual.YCoordinate);
             Assert.AreEqual(expected.IsBomb, actual.IsBomb);
         }
+
+        [Test]
+        public void ReturnTopRightCornerSquareObj()
+        {
+            var squareConverter = new SquareConverter();
+            var field = new Field()
+            {
+                NoOfRows = 4,
+                NoOfColumns = 4,
+                Value = "*..." +
+                        "...." +
+                        ".*.." +
+                        "...."
+            };
+            const int index = 15;
+            var actual = squareConverter.ConvertToSquareBasedOnIndex(index, field);
+            var expected = new Square()
+            {
+                XCoordinate = 4,
+                YCoordinate = 4,
+                IsBomb = false
+            };
+            Assert.AreEqual(expected.XCoordinate, actual.XCoordinate);
+            Assert.AreEqual(expected.YCoordinate, actual.YCoordinate);
+            Assert.AreEqual(expected.IsBomb, actual.IsBomb);
+        }
     }
 }
