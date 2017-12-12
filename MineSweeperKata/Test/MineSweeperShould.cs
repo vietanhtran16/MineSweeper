@@ -64,5 +64,20 @@ namespace MineSweeperKata.Test
                                     "\n";
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void ReturnEmptyField()
+        {
+            var mineSweeper = new MineSweeper();
+            const string fields = "~~~\n" +
+                                  "00\n" +
+                                  "~~~";
+            var actual = mineSweeper.Sweep(fields);
+            const string expected = "~~~\n" +
+                                    "Field #1:\n" +
+                                    "~~~\n" +
+                                    "\n";
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
