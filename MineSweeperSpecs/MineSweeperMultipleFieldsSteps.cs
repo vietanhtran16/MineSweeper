@@ -38,19 +38,19 @@ namespace MineSweeperSpecs
         [Then(@"the result should be two fields that each square would display the number of surrounding bombs")]
         public void ThenTheResultShouldBeTwoFieldsThatEachSquareWouldDisplayTheNumberOfSurroundingBombs()
         {
-            var expected = "~~~\n" +
-                           "Field #1:\n" +
-                           "*21\n" +
-                           "12*\n" +
-                           "~~~\n" +
-                           "\n" +
-                           "~~~\n" +
-                           "Field #2:\n" +
-                           "**100\n" +
-                           "33200\n" +
-                           "1*100\n" +
-                           "~~~\n" +
-                           "\n";
+            const string expected = "~~~\n" +
+                                    "Field #1:\n" +
+                                    "*21\n" +
+                                    "12*\n" +
+                                    "~~~\n" +
+                                    "\n" +
+                                    "~~~\n" +
+                                    "Field #2:\n" +
+                                    "**100\n" +
+                                    "33200\n" +
+                                    "1*100\n" +
+                                    "~~~\n" +
+                                    "\n";
 
             Assert.AreEqual(expected, _result);
         }
