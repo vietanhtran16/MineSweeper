@@ -5,7 +5,7 @@ using TechTalk.SpecFlow;
 namespace MineSweeperSpecs
 {
     [Binding]
-    public class MineSweeperSteps
+    public class MineSweeperSingleFieldSteps
     {
         private string _rawField;
         private string _result;

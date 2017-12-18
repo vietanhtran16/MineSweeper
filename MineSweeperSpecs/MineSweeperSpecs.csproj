@@ -54,7 +54,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MineSweeper.feature</DependentUpon>
     </Compile>
-    <Compile Include="MineSweeperSteps.cs" />
+    <Compile Include="MineSweeperEmptyFieldSteps.cs" />
+    <Compile Include="MineSweeperMultipleFieldsSteps.cs" />
+    <Compile Include="MineSweeperSingleFieldSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
