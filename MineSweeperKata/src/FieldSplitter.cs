@@ -27,7 +27,7 @@ namespace MineSweeperKata
             return test.Select(m => m.Value);
         }
 
-        public IEnumerable<Field> ConvertMultipleFields(IEnumerable<string> splitFields)
+        private IEnumerable<Field> ConvertMultipleFields(IEnumerable<string> splitFields)
         {
             return splitFields.Select(field => _fieldConverter.ConvertFrom(field)).ToList();
         }
