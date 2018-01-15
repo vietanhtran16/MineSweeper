@@ -8,15 +8,16 @@ namespace MineSweeperKata
     {
         public Field ConvertFrom(string fields)
         {
-            var field = new Field();
             var rowAndColumn = GetRowAndColumn(fields);
-            var processedFieldValue = CleanseField(fields);
-            processedFieldValue = RemoveRowAndColumn(processedFieldValue, rowAndColumn);
-
-            field.NoOfRows = rowAndColumn.First();
-            field.NoOfColumns = rowAndColumn.Last();
-            field.Value = processedFieldValue;
-            return field;
+            var cleansedFieldValue = RemoveUnneedSymbols(fields);
+            var fieldValue = RemoveRowAndColumn(cleansedFieldValue, rowAndColumn);
+            
+            return new Field()
+            {
+                NoOfRows = rowAndColumn.First(),
+                NoOfColumns = rowAndColumn.Last(),
+                Value = fieldValue,
+            };
         }
 
         private List<int> GetRowAndColumn(string fields)
@@ -31,17 +32,17 @@ namespace MineSweeperKata
             return rowAndColumn;
         }
 
-        private string CleanseField(string fields)
+        private string RemoveUnneedSymbols(string fields)
         {
             return fields.Replace("~", "").Replace("\n", "").Replace(" ", "");
         }
 
-        private string RemoveRowAndColumn(string processedFieldValue, IEnumerable<int> rowAndColumn)
+        private string RemoveRowAndColumn(string cleansedFieldValue, IEnumerable<int> rowAndColumn)
         {
             foreach (var i in rowAndColumn)
-                processedFieldValue = processedFieldValue.Replace(i.ToString(), "");
+                cleansedFieldValue = cleansedFieldValue.Replace(i.ToString(), "");
 
-            return processedFieldValue;
+            return cleansedFieldValue;
         }
     }
 }
