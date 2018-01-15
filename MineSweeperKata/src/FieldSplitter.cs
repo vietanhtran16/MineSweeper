@@ -23,11 +23,11 @@ namespace MineSweeperKata
         public IEnumerable<string> Split(string fields)
         {
             const string pattern = @"\~~~(.*?)\~~~";
-            var test = Regex.Matches(fields, pattern, RegexOptions.Singleline).Cast<Match>();
-            return test.Select(m => m.Value);
+            var matches = Regex.Matches(fields, pattern, RegexOptions.Singleline).Cast<Match>();
+            return matches.Select(m => m.Value);
         }
 
-        public IEnumerable<Field> ConvertMultipleFields(IEnumerable<string> splitFields)
+        private IEnumerable<Field> ConvertMultipleFields(IEnumerable<string> splitFields)
         {
             return splitFields.Select(field => _fieldConverter.ConvertFrom(field)).ToList();
         }

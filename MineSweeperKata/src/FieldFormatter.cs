@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Text;
+using MineSweeperKata.DTO;
 
 namespace MineSweeperKata
 {
@@ -12,8 +13,8 @@ namespace MineSweeperKata
         {
             _mineAnalyser = new MineAnalyser();
         }
-
-        public string Format(IEnumerable<DTO.Field> processedFields)
+        
+        public string Format(IEnumerable<Field> processedFields)
         {
             var result = new StringBuilder();
             var fieldCount = 1;
