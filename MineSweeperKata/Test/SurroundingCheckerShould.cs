@@ -63,21 +63,21 @@ namespace MineSweeperKata.Test
             var field = new Field()
             {
                 NoOfRows = 4,
-                NoOfColumns = 4,
-                Value = "*..." +
-                        "...." +
-                        ".*.." +
-                        "...."
+                NoOfColumns = 5,
+                Value = "*...." +
+                        "....." +
+                        ".*..." +
+                        "....."
             };
             var square = new Square
             {
-                XCoordinate = 4,
+                XCoordinate = 3,
                 YCoordinate = 4,
                 IsBomb = false,
             };
 
             var actual = surroundingChecker.CheckBomb(square, field);
-            var expected = "0";
+            var expected = "1";
             Assert.AreEqual(expected, actual);
         }
     }

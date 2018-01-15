@@ -24,8 +24,8 @@ namespace MineSweeperKata.Test
             var actual = squareConverter.ConvertToSquareBasedOnIndex(index, field);
             var expected = new Square()
             {
-                XCoordinate = 3,
-                YCoordinate = 2,
+                XCoordinate = 2,
+                YCoordinate = 3,
                 IsBomb = true
             };
             Assert.AreEqual(expected.XCoordinate, actual.XCoordinate);
@@ -60,7 +60,7 @@ namespace MineSweeperKata.Test
         }
 
         [Test]
-        public void ReturnTopRightCornerSquareObj()
+        public void ReturnBottomRightCornerSquareObj()
         {
             var squareConverter = new SquareConverter();
             var field = new Field()
@@ -78,6 +78,32 @@ namespace MineSweeperKata.Test
             {
                 XCoordinate = 4,
                 YCoordinate = 4,
+                IsBomb = false
+            };
+            Assert.AreEqual(expected.XCoordinate, actual.XCoordinate);
+            Assert.AreEqual(expected.YCoordinate, actual.YCoordinate);
+            Assert.AreEqual(expected.IsBomb, actual.IsBomb);
+        }
+
+        [Test]
+        public void ReturnTopRightCornerSquareObj()
+        {
+            var squareConverter = new SquareConverter();
+            var field = new Field()
+            {
+                NoOfRows = 4,
+                NoOfColumns = 4,
+                Value = "*..." +
+                        "...." +
+                        ".*.." +
+                        "...."
+            };
+            const int index = 3;
+            var actual = squareConverter.ConvertToSquareBasedOnIndex(index, field);
+            var expected = new Square()
+            {
+                XCoordinate = 4,
+                YCoordinate = 1,
                 IsBomb = false
             };
             Assert.AreEqual(expected.XCoordinate, actual.XCoordinate);

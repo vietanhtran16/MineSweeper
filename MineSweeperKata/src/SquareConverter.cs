@@ -16,8 +16,8 @@ namespace MineSweeperKata
         {
             return new Square
             {
-                XCoordinate = (index < field.NoOfColumns) ? 1 : (index / field.NoOfColumns) + 1,
-                YCoordinate = (index < field.NoOfColumns) ? (index + 1) : index % field.NoOfColumns + 1,
+                XCoordinate = (index < field.NoOfColumns) ? (index + 1) : index % field.NoOfColumns + 1,
+                YCoordinate = (index < field.NoOfColumns) ? 1 : (index / field.NoOfColumns) + 1,
                 IsBomb = (field.Value[index] == _bombSymbol)
             };
         }
